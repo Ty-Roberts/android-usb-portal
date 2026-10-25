@@ -756,72 +756,31 @@
 +        finally:self._drain()
 --- a/scripts/build-mac.sh
 +++ b/scripts/build-mac.sh
-@@ -20,14 +20,14 @@
- set --
- if [ -n "${CODESIGN_IDENTITY:-}" ] && [ "$CODESIGN_IDENTITY" != - ]; then set -- --codesign-identity "$CODESIGN_IDENTITY"; fi
- "$PYTHON" -m PyInstaller "$@" --noconfirm --onefile --name pocket-dimension \
+@@ -23 +23 @@
 -    --paths "$PWD/mac" --collect-all usb \
 +    --paths "$PWD/mac" --collect-all usb --collect-all keyring --recursive-copy-metadata cryptography --recursive-copy-metadata keyring \
-     --add-binary "$LIBUSB_DYLIB:." \
-     --add-data "$LIBUSB_LICENSE:licenses" \
-     --add-data "$PWD/docs/third-party.txt:licenses" \
-     --specpath build/mac --workpath build/mac/work --distpath dist mac/entrypoint.py
- # The GUI uses a pre-extracted runtime to avoid unpacking Python on every click.
- "$PYTHON" -m PyInstaller "$@" --noconfirm --onedir --name pocket-dimension-gui \
+@@ -30 +30 @@
 -    --paths "$PWD/mac" --collect-all usb \
 +    --paths "$PWD/mac" --collect-all usb --collect-all keyring --recursive-copy-metadata cryptography --recursive-copy-metadata keyring \
-     --add-binary "$LIBUSB_DYLIB:." \
-     --add-data "$LIBUSB_LICENSE:licenses" \
-     --add-data "$PWD/docs/third-party.txt:licenses" \
 --- a/tests/phone_acceptance.py
 +++ b/tests/phone_acceptance.py
-@@ -32,7 +32,7 @@
-         root = Path(temporary); os.environ['POCKET_DIMENSION_CACHE'] = str(root / 'cache')
-         data = bytes(i % 251 for i in range(65536)) * 192
-         checksum = hashlib.sha256(data).hexdigest()
+@@ -35 +35 @@
 -        check('protocol v4 and scoped identity', lambda: require(phone.version == 4 and phone.device_id and scope.get('scope_id')))
 +        check('encrypted protocol v5 and scoped identity', lambda: require(phone.version == 5 and phone.secure_transport is not None and phone.device_id and scope.get('scope_id')))
-         def tree():
-             result = phone.pull(root/'tree', remote='', resume=True)
-             require(result['files'] == 2 and (root/'tree/large.bin').read_bytes() == data and (root/'tree/nested/empty').stat().st_size == 0)
-@@ -85,6 +85,8 @@
-         check('recursive upload and download roundtrip', upload_tree)
-         check('byte planning and modification timestamps', lambda: require(phone.plan('large.bin')['bytes'] == len(data) and phone.stat('large.bin')['modified'] > 0))
-         phone.mkdir('__finish__')
+@@ -87,0 +88,2 @@
 +    try: phone.close()
 +    except Exception: pass  # Fixture teardown may already close the accessory.
-     transport.close(); lease.close()
-     Path('build/phone-acceptance.json').write_text(json.dumps({'device': phone.device_id, 'scope': scope['name'], 'batch_frames': phone.batch_options().get('batch_frames', 0), 'checks': results}, indent=2) + '\n')
- 
 --- a/tests/phone_benchmark.py
 +++ b/tests/phone_benchmark.py
-@@ -122,6 +122,9 @@
-                 phone.mkdir('__finish__')
-                 report['phone_cleanup_requested']=True
-             except Exception as error: report['phone_cleanup_error']=str(error)
+@@ -124,0 +125,3 @@
 +        if phone:
 +            try: phone.close()
 +            except Exception: pass
-         if transport:
-             try: transport.close()
-             except Exception: pass
 --- a/app/src/main/java/dev/pocketpull/MainActivity.java
 +++ b/app/src/main/java/dev/pocketpull/MainActivity.java
-@@ -80,7 +80,7 @@
-         connect(false);
-     }
-     @Override protected void onPause() { resumed = false; super.onPause(); }
+@@ -83 +83 @@
 -    @Override protected void onNewIntent(Intent intent) { super.onNewIntent(intent); connect(false); }
 +    @Override protected void onNewIntent(Intent intent) { super.onNewIntent(intent); setIntent(intent); connect(false); }
- 
-     private boolean matches(UsbAccessory accessory) {
-         boolean legacy = "PocketPull".equals(accessory.getManufacturer()) && "PocketPull".equals(accessory.getModel());
-@@ -187,7 +187,7 @@
-                 catch (EOFException cleanClose) { /* TLS close_notify ends one logical client session. */ }
-                 finally { threadSession.remove(); session.close(); }
-             }
+@@ -190 +190 @@
 -        } catch (Exception error) { status(getString(R.string.usb_session_ended)); }
 +        } catch (Exception error) { android.util.Log.w("PocketDimension", "USB session ended", error); status(getString(R.string.usb_session_ended)); }
-         finally {
-             try { opened.close(); } catch (IOException ignored) { }
-             runOnUiThread(() -> { if (descriptor == opened) { descriptor=null; connectionText.setText(getString(R.string.usb_session_closed)); } });

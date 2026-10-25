@@ -218,5 +218,3 @@ Current validation and hardware-only follow-ups are recorded in standard todo.tx
 Pocket Dimension was previously called PocketPull. The primary command is now `pocket-dimension`; `pocketpull` remains a compatibility alias in both Python installs and standalone builds. The Python distribution/module name, Android package ID (`dev.pocketpull`), Mac bundle ID, signing keys, and legacy AOA manufacturer/model are retained to preserve updates and USB compatibility. The app also recognizes the new Pocket Dimension accessory identity. HELLO now reports the new display name; the wire protocol is version 4 in v0.5, with older client protocol compatibility. Quit the older Mac app before opening the renamed app.
 
 Validation for v0.4 (2026-10-24): 61 Python/codec/client checks, GUI cancellation/skip/retry checks, and four Android emulator storage/cancellation checks pass. Gradle build/lint pass. Physical USB cancellation and reconnect acceptance with the new APK remain on the hardware checklist.
-
-
