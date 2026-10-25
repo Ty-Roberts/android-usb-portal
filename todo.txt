@@ -1,0 +1,74 @@
+(A) 2026-10-25 Complete macOS Keychain access approval for final rebuilt helper and re-pair phone after successful revocation test +PocketDimension @security @user
+(B) 2026-10-25 Obtain independent security review and validate Android 8 and 9 platform TLS interoperability before work deployment +PocketDimension @security @library @test
+x 2026-10-25 2026-10-25 Verify real-phone mutual TLS pairing persistence encrypted transfers cancellation resume revocation and generated-file cleanup +PocketDimension @security @hardware @test
+x 2026-10-25 2026-10-25 Extract reusable Android secure USB library owning TLS, pairing, trust persistence, seven-day expiry and revocation with app-provided approval UI +PocketDimension @security @library
+(A) 2026-10-24 Validate queue rebinding after physical reconnect changes USB address +PocketDimension @hardware @user
+(B) 2026-10-23 Validate automatic AOA switching after unplug and reconnect on physical phone +PocketDimension @hardware
+x 2026-10-25 2026-10-25 Add authenticated USB pairing and encrypted sessions with explicit phone approval, fixed seven-day trust expiry enforced by the phone, manual revocation, and session termination on expiry +PocketDimension @security @android @mac
+(C) 2026-10-24 Produce Developer ID signed notarized public release using stable signing credentials +PocketDimension @release @credentials
+x 2026-10-24 2026-10-24 Benchmark verified 3 GB upload and download on physical USB and record effective speeds +PocketDimension @hardware @performance
+x 2026-10-24 2026-10-24 Implement bounded 16-frame batch acknowledgments and verify cancellation resume checksums and controlled 512 MiB throughput gains on physical USB +PocketDimension @performance @dev @test
+x 2026-10-24 2026-10-24 Apply blue portal theme and matching icons to desktop and Android with light and dark support +PocketDimension @design @mac @android
+x 2026-10-24 2026-10-24 Reduce folder browsing latency by avoiding bundled runtime extraction per GUI command +PocketDimension @mac @performance
+x 2026-10-24 2026-10-24 Show phone model and serial or stable app ID in GUI device picker and CLI +PocketDimension @mac @android
+x 2026-10-24 2026-10-24 Validate physical USB cancellation skip retry conflicts history checksums and wrong phone or scope refusals with v0.5 APK +PocketDimension @hardware @test
+x 2026-10-24 2026-10-24 Add safe resume support for interrupted large-file transfers +PocketDimension @dev @android
+x 2026-10-24 2026-10-24 Add overall queue byte progress, remaining items, ETA, and persistent history (session history and Reveal are implemented) +PocketDimension @mac
+x 2026-10-24 2026-10-24 Add browser sorting by name size and modification date plus drag-and-drop uploads +PocketDimension @mac @android
+x 2026-10-24 2026-10-24 Add matching app icons DMG installer versioned signing workflow and manual update instructions +PocketDimension @release
+x 2026-10-24 2026-10-24 Implement and build read-only Finder File Provider with scoped identities offline errors and attach refresh detach controls +PocketDimension @mac @finder
+x 2026-10-24 2026-10-23 Validate v0.3 recursive pull, upload, progress, and GUI transfers over physical USB with updated APK +PocketDimension @hardware
+x 2026-10-24 2026-10-23 Validate system dark theme on physical phone with updated APK +PocketDimension @hardware
+x 2026-10-24 2026-10-23 Validate Android folder-picker provider permissions and all-files-access grant/revocation on physical phone +PocketDimension @hardware
+x 2026-10-23 2026-10-23 Pull a selected file over USB and compare checksum end to end +PocketDimension @hardware
+x 2026-10-23 2026-10-23 Verify Gradle assembleDebug and lintDebug outside sandbox local-socket restrictions +PocketDimension @test
+x 2026-10-23 2026-10-23 Move UI text into string resources and explicitly configure Android data extraction rules to resolve remaining lint warnings +PocketDimension @android
+x 2026-10-23 2026-10-23 Scaffold Android project and pin Gradle wrapper +PocketDimension @dev
+x 2026-10-23 2026-10-23 Implement file selection, USB permissions, accessory lifecycle, and streaming +PocketDimension @android
+x 2026-10-23 2026-10-23 Implement Mac USB enumeration and explicit AOA handshake probe +PocketDimension @mac
+x 2026-10-23 2026-10-23 Implement framed transfers, SHA-256 verification, and safe local saves +PocketDimension @dev
+x 2026-10-23 2026-10-23 Test protocol fragmentation, corruption, interruption, USB handshake logic, and Java-Python wire interoperability with 17 passing tests +PocketDimension @test
+x 2026-10-23 2026-10-23 Build and signature-verify debug APK using installed Android SDK tools +PocketDimension @test
+x 2026-10-23 2026-10-23 Run standalone Android lint with zero errors and 12 warnings +PocketDimension @test
+x 2026-10-23 2026-10-23 Document setup, wire protocol, and physical-device validation +PocketDimension @docs
+x 2026-10-23 2026-10-23 Verify AOA handshake and selected-file status on user phone with successful CLI output +PocketDimension @hardware
+x 2026-10-23 2026-10-23 Confirm user installed Mac CLI and USB dependencies with successful device communication +PocketDimension @mac @test
+x 2026-10-23 2026-10-23 Fix USB zero-length packets mistaken for EOF and pass 20 tests including bounded timeout and 199718-byte regression +PocketDimension @dev @test
+x 2026-10-23 2026-10-23 Rebuild and install corrected Mac CLI in existing virtual environment +PocketDimension @mac @test
+x 2026-10-23 2026-10-23 auto discover common vid/pid combinations +PocketDimension
+x 2026-10-23 2026-10-23 make connecting to a device more streamlined +PocketDimension
+x 2026-10-23 2026-10-23 add a dark theme +PocketDimension
+x 2026-10-23 2026-10-23 make pocketpull a binary so we can just call it directly +PocketDimension
+x 2026-10-23 2026-10-23 Pass 29 protocol, USB, discovery, and connection tests +PocketDimension @test
+x 2026-10-23 2026-10-23 Build and smoke-test Apple Silicon standalone executable with embedded Python and libusb outside repository and without development tools on PATH +PocketDimension @mac @test
+x 2026-10-23 2026-10-23 Inspect light and dark Android themes in emulator +PocketDimension @android @test
+x 2026-10-23 2026-10-23 Run Gradle build and lint successfully with zero errors and one tool-version warning +PocketDimension @test
+x 2026-10-23 2026-10-23 Confirm standalone connect handshakes and reads approved selection from physical phone +PocketDimension @hardware @test
+x 2026-10-23 2026-10-23 support pulling directories +PocketDimension @dev @test
+x 2026-10-23 2026-10-23 show download progress +PocketDimension @dev @test
+x 2026-10-23 2026-10-23 pushing files to the device +PocketDimension @dev @test
+x 2026-10-23 2026-10-23 browse filesystem of device, add all file acess to app +PocketDimension @android @dev
+x 2026-10-23 2026-10-23 GUI option for push/pull +PocketDimension @mac
+x 2026-10-23 2026-10-23 see if we can make an extension to finder to register the android device as an external drive or something +PocketDimension @research @mac
+x 2026-10-23 2026-10-23 Pass 47 automated protocol, transfer, path-validation, discovery, progress, and GUI-launch tests +PocketDimension @test
+x 2026-10-23 2026-10-23 Pass three Android emulator storage checks for round-trip data, upload cleanup, overwrite refusal, and containment +PocketDimension @android @test
+x 2026-10-23 2026-10-23 Build v0.3 APK, standalone CLI, and native Mac GUI; smoke-test GUI device discovery and APK-upgrade message +PocketDimension @test
+x 2026-10-23 2026-10-23 Investigate Finder File Provider versus FSKit and Finder Sync feasibility +PocketDimension @research
+x 2026-10-23 2026-10-23 Rebrand app, Mac GUI, CLI, build artifacts, and docs to Pocket Dimension while retaining update identities and pocketpull alias +PocketDimension @dev @mac @android
+x 2026-10-23 2026-10-23 Verify rebrand with 47 passing tests, Gradle build and lint, signed APK, signed Mac bundle, and both CLI entry points +PocketDimension @test
+x 2026-10-23 2026-10-23 Improve GUI with native folder double-click and Return actions, Command and Shift multi-selection, and context menus +PocketDimension @mac
+x 2026-10-23 2026-10-23 Add multi-item download and upload queues with destination preflight, per-item progress, and stop-on-error behavior +PocketDimension @mac
+x 2026-10-23 2026-10-23 Add GUI Back Forward Up Refresh shortcuts, current-folder filtering, and selected-item counts +PocketDimension @mac
+x 2026-10-23 2026-10-23 Verify GUI model navigation, batch ordering, failure handling, and local path safety with scripts/test-gui.sh +PocketDimension @test
+x 2026-10-23 2026-10-23 Verify live GUI folder double-click, Return-to-open, Back navigation, and two-row Shift selection against connected phone +PocketDimension @mac @test
+x 2026-10-24 2026-10-24 Add cooperative transfer cancellation and clean session reuse without unplugging +PocketDimension @dev @android @mac
+x 2026-10-24 2026-10-24 Add transfer queue with retry failed items and Skip or Keep Both conflict handling +PocketDimension @mac @dev
+x 2026-10-24 2026-10-24 Add session transfer history with per-item outcomes and Reveal in Finder for completed downloads +PocketDimension @mac
+x 2026-10-24 2026-10-24 Bind queued jobs to phone and sharing-scope identities before rebinding a changed USB address +PocketDimension @dev @android @mac
+x 2026-10-24 2026-10-24 Pass 61 client and codec tests, GUI cancellation skip retry checks, and four Android emulator storage/cancellation checks +PocketDimension @test
+x 2026-10-24 2026-10-24 Build and sign v0.4 Android APK, standalone CLI, and native Mac app with cancellation and conflict policies +PocketDimension @release
+x 2026-10-24 2026-10-24 Inspect native queue sheet and conflict-policy controls +PocketDimension @mac @test
+x 2026-10-24 2026-10-24 Pass 73 Python checks GUI sort drop history checks real USB GUI acceptance Android build and lint and mounted DMG signature and CLI verification +PocketDimension @test
+x 2026-10-24 2026-10-24 Drop Finder integration and remove prototype code build tooling and GUI controls; focus on standalone GUI +PocketDimension @mac
+x 2026-10-25 2026-10-25 Name repository android-usb-portal while retaining Pocket Dimension app branding +PocketDimension @docs
+x 2026-10-25 2026-10-25 Prepare initial GitHub repository with illustrated README desktop and Android screenshots build instructions and private local files excluded +PocketDimension @docs @release

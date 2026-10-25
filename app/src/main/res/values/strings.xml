@@ -1,0 +1,71 @@
+<resources>
+  <string name="app_name">Pocket Dimension</string>
+  <string name="usb_disconnected">Disconnected · reconnect your USB cable</string>
+  <string name="usb_approval_needed">USB approval needed · tap Connect USB</string>
+  <string name="usb_connected">Connected · ready for your Mac</string>
+  <string name="usb_session_closed">USB session closed · tap Connect USB to retry</string>
+  <string name="usb_session_ended">USB session ended · reconnect to retry</string>
+  <string name="file_pick_prompt">Choose a file or folder from the system picker</string>
+  <string name="file_loading">Reading file information…</string>
+  <string name="file_approved">Approved · your connected Mac can pull this file until you clear it or close the app</string>
+  <string name="file_unselected">Choose a file or folder to share with your Mac.</string>
+  <string name="file_cleared">Sharing cleared · access revoked</string>
+  <string name="brand">POCKET DIMENSION  /  FILE PORTAL</string>
+  <string name="heading">A portal for\nyour files.</string>
+  <string name="intro">Open a pocket between your phone and Mac. One cable. No cloud.</string>
+  <string name="connect_heading">01   CONNECT YOUR MAC</string>
+  <string name="usb_waiting">Waiting for USB · run pocket-dimension connect on your Mac</string>
+  <string name="connect_button">Connect USB</string>
+  <string name="file_heading">02   CHOOSE WHAT TO SHARE</string>
+  <string name="choose_button">Choose a file</string>
+  <string name="clear_button">Stop sharing</string>
+  <string name="pull_heading">03   TRANSFER ON YOUR MAC</string>
+  <string name="pull_command">pocket-dimension pull ./my-file</string>
+  <string name="pull_help">Keep Pocket Dimension open. Browse, pull, and push in the Mac app or terminal; every file is checksum verified.</string>
+  <string name="usb_error">USB unavailable: %1$s</string>
+  <string name="file_error">Could not read file: %1$s</string>
+  <string name="file_unknown_size">%1$s\nSize unknown</string>
+  <string name="sending">Sending %1$s…</string>
+  <plurals name="file_known_size">
+    <item quantity="one">%1$s\n%2$d byte</item>
+    <item quantity="other">%1$s\n%2$d bytes</item>
+  </plurals>
+  <plurals name="sent_progress">
+    <item quantity="one">Sent %1$d byte…</item>
+    <item quantity="other">Sent %1$d bytes…</item>
+  </plurals>
+  <plurals name="sent_complete">
+    <item quantity="one">Sent %1$d byte · check verification on your Mac</item>
+    <item quantity="other">Sent %1$d bytes · check verification on your Mac</item>
+  </plurals>
+  <string name="folder_button">Choose a folder</string>
+  <string name="all_files_button">Share device storage</string>
+  <string name="folder_scope_help">A shared folder allows the connected Mac to browse, download, and add files. Existing files are never overwritten.</string>
+  <string name="all_files_help">Optional: enable all files access in Android settings to share device storage. Android private app data stays restricted.</string>
+  <string name="storage_not_enabled">All files access is not enabled. You can choose a folder instead.</string>
+  <string name="folder_selected">%1$s\nFolder shared</string>
+  <string name="folder_approved">Folder approved · your Mac can browse, pull, and push until you clear sharing or close the app.</string>
+  <string name="shared_storage">Shared storage</string>
+  <string name="operation_error">Operation stopped: %1$s</string>
+  <plurals name="receiving">
+    <item quantity="one">Receiving · %1$d byte</item>
+    <item quantity="other">Receiving · %1$d bytes</item>
+  </plurals>
+  <plurals name="received">
+    <item quantity="one">Upload verified · %1$d byte</item>
+    <item quantity="other">Upload verified · %1$d bytes</item>
+  </plurals>
+  <string name="transfer_cancelled">Transfer cancelled · ready for another operation</string>
+  <string name="pair_title">Trust this computer for 7 days?</string>
+  <string name="pair_message">%1$s is requesting access. Compare BOTH fingerprints with the laptop before approving.\n\nComputer fingerprint:\n%2$s\n\nPhone fingerprint:\n%3$s\n\nTrust expires seven days after approval. You still choose which files to share.</string>
+  <string name="pair_deny">Deny</string>
+  <string name="pair_allow">Trust for 7 days</string>
+  <string name="trusted_computers">Trusted computers</string>
+  <string name="no_trusted_computers">No computers are trusted. Pair from the desktop app.</string>
+  <string name="phone_fingerprint">Phone fingerprint</string>
+  <string name="trust_until">Trusted until %1$s</string>
+  <string name="forget_computer">Forget computer</string>
+  <string name="forget_all">Forget all computers</string>
+  <string name="trust_revoked">Computer trust revoked. Choose what to share again.</string>
+  <string name="security_error">Security: %1$s</string>
+</resources>

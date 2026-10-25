@@ -1,0 +1,11 @@
+<resources>
+    <color name="background">#090F20</color>
+    <color name="surface">#131F37</color>
+    <color name="ink">#E8F1FF</color>
+    <color name="muted">#A6BAD8</color>
+    <color name="accent">#8AB7FF</color>
+    <color name="accent_soft">#20365A</color>
+    <color name="on_accent">#0B1A35</color>
+    <color name="border">#294367</color>
+    <bool name="light_system_bars">false</bool>
+</resources>

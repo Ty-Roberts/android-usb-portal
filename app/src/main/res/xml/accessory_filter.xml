@@ -1,0 +1,4 @@
+<resources>
+    <usb-accessory manufacturer="PocketPull" model="PocketPull" version="1" />
+    <usb-accessory manufacturer="Pocket Dimension" model="Pocket Dimension" version="1" />
+</resources>

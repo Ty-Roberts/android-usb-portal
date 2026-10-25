@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pocketpull"
+version = "0.7.0"
+description = "Pocket Dimension: move Android files and folders over USB"
+requires-python = ">=3.10"
+dependencies = ["pyusb>=1.2.1,<2", "cryptography>=46,<50", "keyring>=25,<27"]
+
+[project.optional-dependencies]
+bundle = ["pyinstaller>=6.16,<7"]
+
+[project.scripts]
+pocket-dimension = "pocketpull.cli:main"
+pocketpull = "pocketpull.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pocketpull*"]

@@ -1,0 +1,38 @@
+Pocket Dimension standalone Mac executable
+
+The executable embeds CPython, PyUSB, and the libusb dynamic library using
+PyInstaller. No modifications are made to those upstream dependencies.
+
+CPython: Python Software Foundation License
+https://docs.python.org/3/license.html
+https://www.python.org/downloads/source/
+
+PyUSB: BSD 3-Clause License
+https://github.com/pyusb/pyusb
+PyUSB's distribution metadata and license are collected into the bundle.
+
+libusb: GNU Lesser General Public License, version 2.1 or later
+https://github.com/libusb/libusb
+https://libusb.info/
+The installed library's COPYING file is embedded beside this notice.
+libusb is dynamically loaded as libusb-1.0.0.dylib, not statically linked.
+To replace it with a compatible build, set LIBUSB_DYLIB to the replacement
+library's absolute path and run scripts/build-mac.sh. Keep its COPYING file
+in the parent of the library's lib directory. Pocket Dimension's build scripts
+and Python sources are in this repository.
+
+PyInstaller: GPL 2.0 or later with an exception allowing distribution of
+bundled applications under their own license.
+https://pyinstaller.org/en/stable/license.html
+
+Build for each desired architecture on a matching Mac. The local build is
+ad-hoc signed by PyInstaller; it is not an Apple-notarized release.
+
+cryptography: Apache-2.0 OR BSD-3-Clause; includes OpenSSL and Rust dependencies
+under their respective licenses. Distribution metadata and license files are
+collected into the bundle.
+https://github.com/pyca/cryptography/blob/main/LICENSE
+
+keyring: MIT License. Distribution metadata and license files are collected.
+https://github.com/jaraco/keyring/blob/main/LICENSE
+The macOS Keychain backend is selected explicitly; plaintext backends are unused.

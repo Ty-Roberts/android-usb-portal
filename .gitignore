@@ -1,0 +1,18 @@
+.gradle/
+.gradle-home/
+**/build/
+local.properties
+.venv/
+__pycache__/
+*.egg-info/
+.DS_Store
+dist/
+
+# Local transfer samples and signing material
+/test.jpg
+/test2.jpg
+*.keystore
+*.jks
+*.p12
+.env
+.env.*
